@@ -3,11 +3,19 @@ class PomodoroTimer extends React.Component {
   render() {
 
     return React.createElement(
-      'h2',
+      'div',
       null,
-      'Hello! Hello!'
+      'This timer runs for ',
+      this.props.workingTime,
+      ' minutes, followed by rest of ',
+      this.props.restingTime,
+      ' minutes.',
+      React.createElement('br', null),
+      'For a total time of of 30 minutes.',
+      React.createElement('br', null),
+      'There are 88 seconds elapsed.'
     );
   }
 }
 
-ReactDOM.render(React.createElement(PomodoroTimer, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(PomodoroTimer, { workingTime: 25, restingTime: 5 }), document.getElementById('app'));
